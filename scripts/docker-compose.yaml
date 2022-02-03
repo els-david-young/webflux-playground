@@ -1,0 +1,17 @@
+version: "3"
+services:
+  db:
+    image: "postgres:12.5"
+    environment:
+      - POSTGRES_USER=task_admin
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=reactive-tasks
+    ports:
+      - "5432:5432"
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8090:8080"
+    links:
+      - db

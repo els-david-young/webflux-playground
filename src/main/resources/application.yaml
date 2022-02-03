@@ -1,0 +1,25 @@
+
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/reactive-tasks
+    username: task_admin
+    password: password
+
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/reactive-tasks
+#    driver-class-name: org.postgresql.Driver
+#    username: task_admin
+#    password: password
+
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/reactive-tasks
+    driver-class-name: org.postgresql.Driver
+    user: task_admin
+    password: password
+    change-log: "classpath:/task/changelog/changelog-master.xml"
+    default-schema: task
+    liquibase-schema: public
+
+logging.level:
+  root: INFO
+  liquibase: INFO

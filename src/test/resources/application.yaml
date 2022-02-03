@@ -1,0 +1,12 @@
+
+spring:
+  r2dbc:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: "classpath:/task/changelog/changelog-master.xml"
+    default-schema: task
+    liquibase-schema: public
+logging.level:
+  root: INFO
+  liquibase: INFO
